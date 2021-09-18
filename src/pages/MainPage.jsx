@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import AppInfo from "../components/AppInfo";
+import StoreInfo from "../components/StoreInfo";
 import TripLogo from "../components/TripLogo";
 
 const Container = styled.div`
@@ -12,38 +14,21 @@ const Container = styled.div`
 const Content = styled.div`
   width: 1550px;
   height: 60%;
-  background-color: red;
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
 const TextContainer = styled.div`
-  background-color: green;
   width: 40%;
-  margin-left: 5%;
+  margin-left: 200px;
 `;
 
-const Text = styled.div`
-  font-size: 36px;
-  margin-bottom: 20px;
-`;
 const StoreList = styled.div`
+  margin-top: 80px;
   display: flex;
   flex-direction: row;
 `;
-const StoreInfo = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 250px;
-  margin-right: 30px;
-`;
-const StoreLogo = styled.img`
-  margin-right: 10px;
-  height: 50px;
-`;
-const StoreText = styled.div``;
 
 const MainPage = () => {
   const baseYear = "2019";
@@ -53,22 +38,20 @@ const MainPage = () => {
       <Content>
         <TripLogo baseYear={baseYear} baseMonth={baseMonth} />
         <TextContainer>
-          <Text>350만 명의 사용자</Text>
-          <Text>21만 개의 리뷰</Text>
-          <Text>650만 개의 저장</Text>
+          <AppInfo maxNum={350} type={"만 명"} target={"사용자"} />
+          <AppInfo maxNum={21} type={"만 개"} target={"리뷰"} />
+          <AppInfo maxNum={650} type={"만 개"} target={"저장"} />
           <StoreList>
-            <StoreInfo>
-              <StoreLogo src="/images/play-store.png" />
-              <StoreText>
-                2018 구글 플레이스토어 올해의 앱 최우수상 수상
-              </StoreText>
-            </StoreInfo>
-            <StoreInfo>
-              <StoreLogo src="/images/app-store.png" />
-              <StoreText>
-                2018 구글 플레이스토어 올해의 앱 최우수상 수상
-              </StoreText>
-            </StoreInfo>
+            <StoreInfo
+              awardYear={2018}
+              type={"play-store"}
+              title={"올해의 앱 최우수상 수상"}
+            />
+            <StoreInfo
+              awardYear={2018}
+              type={"app-store"}
+              title={"오늘의 여행앱 선정"}
+            />
           </StoreList>
         </TextContainer>
       </Content>
