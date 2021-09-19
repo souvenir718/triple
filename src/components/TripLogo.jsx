@@ -1,15 +1,28 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+    from{
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+`;
 
 const ImgContainer = styled.div`
-  height: 90%;
-  width: 40%;
+  height: 100%;
+  width: 100%;
   margin-left: 5%;
   margin-top: 3%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation-duration: 700ms;
+  animation-timing-function: ease-out;
+  animation-name: ${fadeIn};
+  animation-fill-mode: forwards;
 `;
 const Image = styled.img`
   height: 90%;
