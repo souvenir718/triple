@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import AppInfo from "../components/AppInfo";
 import StoreInfo from "../components/StoreInfo";
 import TripLogo from "../components/TripLogo";
-
-const fadeIn = keyframes`
-    from{
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
-`;
+import { fadeIn } from "../styles/keyframe";
 
 const Container = styled.div`
   min-width: 1200px;
@@ -59,8 +51,8 @@ const StoreList = styled.div`
 `;
 
 const MainPage = () => {
-  const baseYear = "2019";
-  const baseMonth = "2";
+  const baseYear = 2019;
+  const baseMonth = 2;
 
   const [logoState, setLogoState] = useState(false);
   const [appState, setAppState] = useState(false);

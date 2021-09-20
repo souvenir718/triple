@@ -1,14 +1,6 @@
-import React, { useEffect } from "react";
-import styled, { keyframes } from "styled-components";
-
-const fadeIn = keyframes`
-    from{
-        opacity: 0
-    }
-    to {
-        opacity: 1
-    }
-`;
+import React from "react";
+import styled from "styled-components";
+import { fadeIn } from "../styles/keyframe";
 
 const ImgContainer = styled.div`
   height: 100%;
